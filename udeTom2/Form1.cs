@@ -5,15 +5,19 @@ namespace udeTom2
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
+            label1.Text = $"Average is 0";
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            double input = double.Parse(textBox1.Text);
-            label1.Text = $"13% of {input} is {input * 0.13}";
+            decimal fVal = decimal.Parse(textBox1.Text);
+            decimal sVal = decimal.Parse(textBox2.Text);
+            decimal ave = (fVal + sVal) / 2;
+            label1.Text = $"Average is {ave:C}";
         }
     }
 }
