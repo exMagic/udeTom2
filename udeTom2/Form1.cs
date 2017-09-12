@@ -16,5 +16,11 @@ namespace udeTom2
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            double input = double.Parse(textBox1.Text);
+            label1.Text = $"13% of {input} is {input * 0.13}";
+        }
     }
 }
