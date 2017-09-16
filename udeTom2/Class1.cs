@@ -8,9 +8,14 @@ namespace udeTom2
 {
     static class Class1
     {
-        public static decimal Add(decimal c, decimal f)
+        public static void Summarize(decimal[] values, out decimal max, out decimal min, out decimal average, out decimal sum)
         {
-            return c + f;
+            var list = values.ToList();
+            max = list.Max();
+            min = list.Min();
+            average = list.Average();
+            sum = list.Sum();
         }
+        
     }
 }
