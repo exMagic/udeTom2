@@ -16,7 +16,7 @@ namespace udeTom2
         {
             decimal[] values = { numericUpDown1.Value, numericUpDown2.Value, numericUpDown3.Value };
             var list = values.ToList();
-            label1.Text = $"Average: {values.Average()}\n";
+            label1.Text = $"Average: {Math.Round(values.Average(),2)}\n";
             label1.Text += $"Sum: {values.Sum()}\n";
             label1.Text += $"Max: {values.Max()}\n";
 
