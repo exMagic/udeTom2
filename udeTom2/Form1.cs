@@ -12,30 +12,15 @@ namespace udeTom2
             InitializeComponent();
         }
 
-        private void textBox1_DoubleClick(object sender, EventArgs e)
-        {
-            folderBrowserDialog1.ShowDialog();
-            textBox1.Text = folderBrowserDialog1.SelectedPath;
-            button1.Visible = true;
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = "";
-            string[] files = Directory.GetFiles(textBox1.Text);
-            //
-            //for (int i = 0; i < files.Length; i++)
-            //{
-            //    richTextBox1.Text += files[i];
-            //}
-
-            foreach (string c in files)
+            double sum = 0;
+            double val;
+            for(int i = 0; i < dataGridView1.RowCount - 1; i++)
             {
-                richTextBox1.Text += $"{c} \n";
-               
-
+                sum += double.TryParse(dataGridView1[0, i].Value.ToString(), out val) ? val : 0.0;
             }
+            label1.Text = $"Suma: {sum}";
         }
     }
 }
